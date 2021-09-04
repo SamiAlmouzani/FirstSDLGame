@@ -1,11 +1,12 @@
-#include <SDL_rect.h>
+#include "player.h"
 
-Player::Player(int x, int y, int width, int height)
-        :x{ m_x }, y{ m_y }, width{ m_width }, heigth{ m_heigth } {
-            
-            SDL_Rect r;
-            r.x = x;
-            r.y = y;
-            r.w = w;
-            r.h = h;:     
-        }
+Player::Player(){
+		r = new SDL_Rect();
+		r->x = 50;
+		r->y = 50;
+		r->w = 50;
+		r->h = 50;
+}
+Player::~Player(){
+		delete r;
+}

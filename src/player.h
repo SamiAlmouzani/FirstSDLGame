@@ -1,14 +1,21 @@
+#pragma once
+#include <SDL_rect.h>
+#include <string.h>
+
 class Player {
 
 	private:
-        int m_x, m_y, m_width, m_heigth;
-
+		SDL_Rect* r;	
 	public:
 		//player constructor
-        Player(int x, int y, int width, int height);
-		
+		Player();
+		//player destructor
+		~Player();
+	
 		// setters for postion
-		inline void set_position_x(int x) { m_x += x; }
-    
-		inline void set_position_y(int y) {  m_y += y; }
+		inline void set_position_x(int x) { r->x += x; }
+		    
+		inline void set_position_y(int y) {  r->y += y; }
+
+		inline SDL_Rect* get_player(){ return r; }
 };
